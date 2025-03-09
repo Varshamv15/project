@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, Dr. {{ session['user_id'] }}</h1>
+    <h2>Search Patient Records</h2>
+    <form action="{{ url_for('view_patient') }}" method="POST">
+        <label for="patient_name">Enter Patient's Name:</label>
+        <input type="text" name="patient_name" id="patient_name" required>
+        <button type="submit">Search</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

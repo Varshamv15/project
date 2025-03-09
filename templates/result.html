@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>{{ result }}</p>
+    <p>Result: {{ result }}</p>
+    {% if recommendation %}
+        <p>Recommendation: {{ recommendation }}</p>
+    {% endif %}
+    <a href="/upload">Upload Another File</a>
+    <a href="/logout">Logout</a>
+</body>
+</html>
+
